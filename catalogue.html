@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Catalogue - Online Book Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .catalogue-container {
+            width: 90%;
+            margin: 30px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+            position: sticky;
+            top: 0;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        .price {
+            color: #e53935;
+            font-weight: bold;
+        }
+        .availability {
+            color: #388e3c;
+        }
+        .out-of-stock {
+            color: #f44336;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .search-container {
+            margin-bottom: 20px;
+            text-align: right;
+        }
+        #searchInput {
+            padding: 8px;
+            width: 300px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        .book-cover {
+            width: 60px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Online Book Store</h1>
+    </header>
+    
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="login.html">Login</a>
+        <a href="register.html">Register</a>
+        <a href="catalogue.html">Book Catalogue</a>
+    </nav>
+    
+    <div class="catalogue-container">
+        <h2>Book Catalogue</h2>
+        
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search by title, author or genre...">
+        </div>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Cover</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Genre</th>
+                    <th>Price</th>
+                    <th>Availability</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="https://m.media-amazon.com/images/I/71FTb9X6wsL._AC_UF1000,1000_QL80_.jpg" alt="The Great Gatsby" class="book-cover"></td>
+                    <td>The Great Gatsby</td>
+                    <td>F. Scott Fitzgerald</td>
+                    <td>Classic</td>
+                    <td class="price">$12.99</td>
+                    <td class="availability">In Stock</td>
+                    <td><button>Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td><img src="https://m.media-amazon.com/images/I/71FxgtFKcQL._AC_UF1000,1000_QL80_.jpg" alt="To Kill a Mockingbird" class="book-cover"></td>
+                    <td>To Kill a Mockingbird</td>
+                    <td>Harper Lee</td>
+                    <td>Fiction</td>
+                    <td class="price">$10.50</td>
+                    <td class="availability">In Stock</td>
+                    <td><button>Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td><img src="https://m.media-amazon.com/images/I/81StSOpmkjL._AC_UF1000,1000_QL80_.jpg" alt="1984" class="book-cover"></td>
+                    <td>1984</td>
+                    <td>George Orwell</td>
+                    <td>Dystopian</td>
+                    <td class="price">$9.99</td>
+                    <td class="availability">In Stock</td>
+                    <td><button>Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td><img src="https://m.media-amazon.com/images/I/710+HcoP38L._AC_UF1000,1000_QL80_.jpg" alt="The Hobbit" class="book-cover"></td>
+                    <td>The Hobbit</td>
+                    <td>J.R.R. Tolkien</td>
+                    <td>Fantasy</td>
+                    <td class="price">$14.95</td>
+                    <td class="out-of-stock">Out of Stock</td>
+                    <td><button disabled>Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td><img src="https://m.media-amazon.com/images/I/71Q1tPupKjL._AC_UF1000,1000_QL80_.jpg" alt="Pride and Prejudice" class="book-cover"></td>
+                    <td>Pride and Prejudice</td>
+                    <td>Jane Austen</td>
+                    <td>Romance</td>
+                    <td class="price">$8.99</td>
+                    <td class="availability">In Stock</td>
+                    <td><button>Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td><img src="https://m.media-amazon.com/images/I/91HPG31dTwL._AC_UF1000,1000_QL80_.jpg" alt="The Catcher in the Rye" class="book-cover"></td>
+                    <td>The Catcher in the Rye</td>
+                    <td>J.D. Salinger</td>
+                    <td>Literary Fiction</td>
+                    <td class="price">$11.25</td>
+                    <td class="availability">In Stock</td>
+                    <td><button>Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td><img src="https://m.media-amazon.com/images/I/81q77Q39nEL._AC_UF1000,1000_QL80_.jpg" alt="Harry Potter and the Philosopher's Stone" class="book-cover"></td>
+                    <td>Harry Potter and the Philosopher's Stone</td>
+                    <td>J.K. Rowling</td>
+                    <td>Fantasy</td>
+                    <td class="price">$15.99</td>
+                    <td class="availability">In Stock</td>
+                    <td><button>Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td><img src="https://m.media-amazon.com/images/I/51tW-UJVfHL._AC_UF1000,1000_QL80_.jpg" alt="The Lord of the Rings" class="book-cover"></td>
+                    <td>The Lord of the Rings</td>
+                    <td>J.R.R. Tolkien</td>
+                    <td>Fantasy</td>
+                    <td class="price">$22.50</td>
+                    <td class="availability">In Stock</td>
+                    <td><button>Add to Cart</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Online Book Store. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Search functionality
+        document.getElementById('searchInput').addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const rows = document.querySelectorAll('tbody tr');
+            
+            rows.forEach(row => {
+                const title = row.cells[1].textContent.toLowerCase();
+                const author = row.cells[2].textContent.toLowerCase();
+                const genre = row.cells[3].textContent.toLowerCase();
+                
+                if (title.includes(searchTerm) || author.includes(searchTerm) || genre.includes(searchTerm)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
